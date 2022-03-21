@@ -4,22 +4,23 @@
 #include <limits.h>
 int	*ft_range(int min, int max)
 {
-	long long int	mini;
-	long long int	maxi;
-	long long int	i;
+	unsigned int	mini;
+	unsigned int	maxi;
+	unsigned int	i;
 	int				*dest;
-	long long int	j;
+	unsigned int	j;
 
 	mini = min;
 	maxi = max;
-	i = 0;
+	if (min < 0)
+		i = maxi + mini;
+	else
+		i = maxi - min;
 	j = 0;
-	while (i < (maxi - mini))
-		i++;
 	dest = malloc(sizeof(int) * i);
 	while (j < i)
 	{
-		dest[j] = mini + j;
+		dest[j] = min + j;
 		j++;
 	}
 	return (dest);
@@ -27,6 +28,6 @@ int	*ft_range(int min, int max)
 
 int main()
 {
-		int	*test = ft_range(SHRT_MAX, SHRT_MIN);
-		printf("%d\n%d", test[0], test[65534]);
+		int	*test = ft_range(5, INT_MAX);
+		printf("%d\n%d", test[0], test[10]);
 }
