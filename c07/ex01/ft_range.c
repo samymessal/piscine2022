@@ -12,6 +12,10 @@ int	*ft_range(int min, int max)
 
 	mini = min;
 	maxi = max;
+	dest = malloc(sizeof(int) * 0);
+	if (min >= max)
+		return dest;
+	i = 0;
 	if (min < 0)
 		i = maxi + mini;
 	else
@@ -28,6 +32,6 @@ int	*ft_range(int min, int max)
 
 int main()
 {
-		int	*test = ft_range(5, INT_MAX);
-		printf("%d\n%d", test[0], test[10]);
+		int	*test = ft_range(-200, -100);
+		printf("%d\n%d", test[0], test[80]);
 }
