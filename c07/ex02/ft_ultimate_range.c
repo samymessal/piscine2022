@@ -6,35 +6,37 @@ int	ft_ultimate_range(int **range, int min, int max)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	len;
 
 	if (min >= max)
 	{	
 		range = NULL;
 		return (0);
 	}
-	i = 0;
 	i = max - min;
 	j = 0;
-	len = 0;
-	range = malloc(sizeof(int *) * 1);
 	range[0] = malloc(sizeof(int) * i);
-	if (!range || !range[0])
+	if (!range[0])
 		return (-1);
-	while (j < i && range[0][j])
+	while (j < i)
 	{
 		range[0][j] = min + j;
 		j++;
 	}
-	while (range[len])
-		len++;
-	return (len);
+	return (i);
 }
 
 int	main()
 {
-	int	**range;
+	int	*range;
+	int	i;
+	int	y;
 
-	range = malloc(sizeof(int *) * 1);
-	printf("%d", ft_ultimate_range(range, 40, 30));
+	i = 0;
+	y = ft_ultimate_range(&range, 30, 40);
+	printf("%d\n", y);
+	while (i < y)
+	{
+		printf("%d\n", range[i]);
+		i++;
+	}
 }

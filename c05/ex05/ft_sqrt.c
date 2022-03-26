@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int	ft_sqrt(int nb)
 {
 	int	i;
@@ -16,8 +17,9 @@ int	ft_sqrt(int nb)
 	}
 	return (0);
 }
-
+/*
 int	main()
 {
-		printf("%d", ft_sqrt(1089));
+		printf("%d", ft_sqrt(2147483647));
 }
+*/
