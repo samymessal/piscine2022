@@ -10,6 +10,8 @@ char	*ft_strdup(char *src)
 	while (src[i])
 		i++;
 	dest = malloc(sizeof(char) * i);
+	if (!dest)
+		return (0);
 	i = 0;
 	while (src[i])
 	{
@@ -19,8 +21,10 @@ char	*ft_strdup(char *src)
 	return (dest);
 }
 
+/*
 int main()
 {
 	printf("%s\n", ft_strdup("hello"));
 	printf("%s", strdup("hello"));
 }
+*/

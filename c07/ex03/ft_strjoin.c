@@ -2,19 +2,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	strleng(char *str)
 {
 	int	len;
 
 	len = 0;
-	while (str[len])
+		while (str[len])
 	{
 		len++;
 	}
 	return (len);
 }
 
-int	ft_count(char **str)
+int	count(char **str)
 {
 	int	i;
 	int	j;
@@ -43,7 +43,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 	i = 0;
 	k = 0;
-	dest = malloc(sizeof(char) * (ft_count(strs) + ((size - 1) * ft_strlen(sep))));
+	if (size == 0)
+	{
+		dest = malloc(sizeof(char) * 1);
+		return (dest);
+	}
+	dest = malloc(sizeof(char) * (count(strs) + ((size - 1) * strleng(sep))));
 	if (!dest)
 		return (0);
 	while (strs[i] && size > 0)
@@ -58,12 +63,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	return (dest);
 }
-
+/*
 int main(int ac, char **av)
 {
 	if (ac < 1)
 		return (0);
 	char *test;
-	test = ft_strjoin(0, av, ", 7");
+	test = ft_strjoin(3, av, ", 7");
 	printf("%s", test);
 }
+*/

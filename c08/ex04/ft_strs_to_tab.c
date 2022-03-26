@@ -35,6 +35,8 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	i = 0;
 	j = 0;
 	my_tab = malloc(sizeof(*my_tab) * (ac + 1));
+	if (!my_tab)
+		return (NULL);
 	while (i < ac && av[i])
 	{
 		copy = malloc(sizeof(char) * ft_strlen(av[i]));

@@ -85,8 +85,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	ft_rev_tab(result);
 	return (result);
 }
-
+/*
 int	main()
 {
 	printf("%s", ft_convert_base("3F722", "0123456789ABCDEF", "0123456789"));
 }
+*/
