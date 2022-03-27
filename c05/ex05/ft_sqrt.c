@@ -16,14 +16,20 @@ int	ft_sqrt(int nb)
 	{
 		if (i * i == nb)
 			return (i);
+		if (i > 46340)
+			return (0);
 		i++;
 	}
 	return (0);
 }
-/*
+
 int	main()
 {
-		printf("%d", ft_sqrt(-1));
+		int	i = 0;
+		while (i < 50)
+		{
+			printf("%d", ft_sqrt(INT_MAX));
+			i++;
+		}
 }
-*/
 
