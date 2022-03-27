@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int	ft_sqrt(int nb)
 {
@@ -6,6 +7,8 @@ int	ft_sqrt(int nb)
 	int	optimizer;
 
 	i = 0;
+	if (nb == 1)
+		return (1);
 	optimizer = nb / 2;
 	if (optimizer * optimizer == nb)
 		return optimizer;
@@ -20,6 +23,7 @@ int	ft_sqrt(int nb)
 /*
 int	main()
 {
-		printf("%d", ft_sqrt(2147483647));
+		printf("%d", ft_sqrt(-1));
 }
 */
+
