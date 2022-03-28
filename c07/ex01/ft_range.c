@@ -8,9 +8,11 @@ int	*ft_range(int min, int max)
 	int				*dest;
 	unsigned int	j;
 
-	dest = malloc(sizeof(int) * 0); 
 	if (min >= max)
+	{
+		dest = NULL;
 		return (dest);
+	}
 	i = max - min;
 	j = 0;
 	dest = malloc(sizeof(int) * i);
@@ -26,9 +28,9 @@ int	*ft_range(int min, int max)
 /*
 int main()
 {
-		int	*test = ft_range(-200, 0);
+		int	*test = ft_range(0, -10);
 		int	i = 0;
-		while (i < 200)	
-			printf("%d\n", test[i++]);
+		while (i < 10)	
+			printf("%d\n", *test);
 }
 */

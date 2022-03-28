@@ -61,6 +61,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			dest[k++] = sep[j++];
 		i++;
 	}
+	dest[k] = '\0';
 	return (dest);
 }
 /*

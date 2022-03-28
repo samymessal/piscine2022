@@ -9,7 +9,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 
 	if (min >= max)
 	{	
-		range = NULL;
+		*range = NULL;
 		return (0);
 	}
 	i = max - min;
