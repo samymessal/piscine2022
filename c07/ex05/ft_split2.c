@@ -63,6 +63,7 @@ char	*ft_strcpy(char *dest, char *str, int start, int end)
 		i++;
 		start++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 
@@ -106,7 +107,7 @@ int	main()
 	int	i;
 
 	i = 0;
-	lol = ft_split("jai dfaim de ouf l", "       ");
+	lol = ft_split("jai  dfaim de,ouf l", " ,?");
 	while(lol[i])
 	{
 		printf("%s\n", lol[i]);

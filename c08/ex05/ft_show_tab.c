@@ -7,29 +7,6 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while(str[i])
-		++i;
-	return (i);
-}
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	int		i;
-
-	i = 0;
-	while(src[i])
-	{
-		dest[i] = src[i];
-		++i;
-	}
-	return (dest);
-}
-
 void    ft_putnbr(int nbr)
 {
     long int    nb;
@@ -65,32 +42,6 @@ void	ft_putstr(char *str)
 	return ;
 }
 
-struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
-{
-	int			i;
-	int			j;
-	t_stock_str	*my_tab;
-	char		*copy;
-
-	i = 0;
-	j = 0;
-	my_tab = malloc(sizeof(*my_tab) * (ac + 1));
-	if (!my_tab)
-		return (NULL);
-	while (i < ac && av[i])
-	{
-		copy = malloc(sizeof(char) * ft_strlen(av[i]));
-		ft_strcpy(copy, av[i]);
-		my_tab[i].size = ft_strlen(av[i]);
-		my_tab[i].str = av[i];
-		my_tab[i].copy = copy;
-		i++;
-	}
-	my_tab[i].size = 0;
-	my_tab[i].str = 0;
-	my_tab[i].copy = 0;
-	return (my_tab);
-}
 
 void	ft_show_tab(struct s_stock_str *par)
 {
@@ -108,8 +59,7 @@ void	ft_show_tab(struct s_stock_str *par)
 		i++;
 	}
 }
-
-
+/*
 int	main(int ac,char **av)
 {
 	if (ac < 1)
@@ -118,3 +68,4 @@ int	main(int ac,char **av)
 	my_test = ft_strs_to_tab(ac, av);
 	ft_show_tab(my_test);
 }
+*/
